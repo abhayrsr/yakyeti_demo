@@ -1,0 +1,255 @@
+---
+---
+
+<section id="contact" class="booking section">
+  <div class="container">
+    <div class="booking-content">
+      <div class="booking-info">
+        <h2 class="section-title">Reserve Your Table</h2>
+        <p class="booking-description">
+          Experience authentic Himalayan flavors in our warm, welcoming atmosphere. 
+          Book your table today for an unforgettable dining experience.
+        </p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-text">
+              <strong>Phone</strong>
+              <p>+351 21 123 4567</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div class="contact-text">
+              <strong>Email</strong>
+              <p>reservations@yakyeti.pt</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕒</div>
+            <div class="contact-text">
+              <strong>Hours</strong>
+              <p>Mon-Sun: 12:00 - 23:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="booking-form-container">
+        <form class="booking-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+              <label for="time">Time</label>
+              <input type="time" id="time" name="time" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="guests">Number of Guests</label>
+            <select id="guests" name="guests" required>
+              <option value="">Select guests</option>
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+              <option value="5">5 Guests</option>
+              <option value="6">6 Guests</option>
+              <option value="7">7+ Guests</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Special Requests</label>
+            <textarea id="message" name="message" rows="4" placeholder="Any dietary restrictions or special occasions..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Reserve Table</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .booking {
+    background: linear-gradient(135deg, var(--warm-cream), #fef3c7);
+  }
+
+  .booking-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .booking-info .section-title {
+    text-align: left;
+    margin-bottom: 1.5rem;
+  }
+
+  .booking-info .section-title::after {
+    left: 0;
+    transform: none;
+  }
+
+  .booking-description {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .contact-icon {
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .contact-text strong {
+    display: block;
+    color: var(--deep-brown);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .contact-text p {
+    margin: 0;
+    color: var(--text-light);
+  }
+
+  .booking-form-container {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-group label {
+    color: var(--deep-brown);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.75rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background: var(--white);
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .btn-primary {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 968px) {
+    .booking-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+
+    .booking-form-container {
+      padding: 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.booking-form');
+    const dateInput = document.getElementById('date');
+    
+    // Set minimum date to today
+    if (dateInput) {
+      const today = new Date().toISOString().split('T')[0];
+      dateInput.setAttribute('min', today);
+    }
+    
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+      
+      // Simple validation
+      if (!data.name || !data.email || !data.phone || !data.date || !data.time || !data.guests) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      
+      // In a real application, you would send this to your backend
+      alert('Thank you for your reservation request! We will contact you shortly to confirm your booking.');
+      form.reset();
+    });
+  });
+</script>

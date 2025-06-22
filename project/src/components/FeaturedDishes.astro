@@ -1,0 +1,192 @@
+---
+const featuredDishes = [
+  {
+    name: "Traditional MoMo",
+    description: "Handcrafted dumplings filled with seasoned meat or vegetables, served with our signature sauce",
+    image: "https://images.pexels.com/photos/7625056/pexels-photo-7625056.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
+    price: "€12.50"
+  },
+  {
+    name: "Crispy Samosa",
+    description: "Golden triangular pastries filled with spiced potatoes and peas, perfectly crispy",
+    image: "https://images.pexels.com/photos/9609844/pexels-photo-9609844.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
+    price: "€8.90"
+  },
+  {
+    name: "Chicken Karai",
+    description: "Tender chicken cooked with tomatoes, onions, and aromatic spices in traditional karai",
+    image: "https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
+    price: "€16.50"
+  },
+  {
+    name: "Vegetable Korma",
+    description: "Mixed vegetables in a rich, creamy coconut curry sauce with fragrant spices",
+    image: "https://images.pexels.com/photos/2474658/pexels-photo-2474658.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
+    price: "€14.90"
+  },
+  {
+    name: "Mutton Thali",
+    description: "Complete traditional meal with tender mutton curry, rice, dal, vegetables, and bread",
+    image: "https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
+    price: "€22.90"
+  }
+];
+---
+
+<section class="featured-dishes section">
+  <div class="container">
+    <h2 class="section-title">Signature Dishes</h2>
+    <p class="section-intro">
+      Discover our most beloved dishes, prepared with authentic recipes passed down through generations
+    </p>
+    <div class="dishes-grid">
+      {featuredDishes.map((dish, index) => (
+        <div class="dish-card" data-dish={index}>
+          <div class="dish-image">
+            <img src={dish.image} alt={dish.name} loading="lazy" />
+            <div class="dish-overlay">
+              <span class="dish-price">{dish.price}</span>
+            </div>
+          </div>
+          <div class="dish-content">
+            <h3 class="dish-name">{dish.name}</h3>
+            <p class="dish-description">{dish.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .featured-dishes {
+    background: var(--warm-cream);
+  }
+
+  .section-intro {
+    text-align: center;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+  }
+
+  .dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .dish-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    cursor: pointer;
+  }
+
+  .dish-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .dish-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+  }
+
+  .dish-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .dish-card:hover .dish-image img {
+    transform: scale(1.1);
+  }
+
+  .dish-overlay {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, var(--accent-gold), var(--primary-orange));
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .dish-card:hover .dish-overlay {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .dish-price {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+
+  .dish-content {
+    padding: 1.5rem;
+  }
+
+  .dish-name {
+    color: var(--deep-brown);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .dish-description {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .dishes-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .dish-image {
+      height: 200px;
+    }
+
+    .dish-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+  import { animate, stagger } from 'motion';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const dishCards = entry.target.querySelectorAll('.dish-card');
+          animate(
+            dishCards,
+            { opacity: [0, 1], transform: ['translateY(50px)', 'translateY(0)'] },
+            { duration: 0.6, delay: stagger(0.1) }
+          );
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    const featuredSection = document.querySelector('.featured-dishes');
+    if (featuredSection) {
+      observer.observe(featuredSection);
+    }
+  });
+</script>

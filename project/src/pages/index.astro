@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import FeaturedDishes from '../components/FeaturedDishes.astro';
+import Menu from '../components/Menu.astro';
+import Booking from '../components/Booking.astro';
+import Location from '../components/Location.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Yak Yeti - Authentic Nepalese & Himalayan Cuisine in Lisbon">
+  <Header />
+  <main>
+    <Hero />
+    <FeaturedDishes />
+    <Menu />
+    <Booking />
+    <Location />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    padding-top: 80px; /* Account for fixed header */
+  }
+</style>

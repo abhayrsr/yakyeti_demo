@@ -1,0 +1,181 @@
+---
+---
+
+<section id="home" class="hero">
+  <div class="hero-background">
+    <img src="https://images.pexels.com/photos/1579741/pexels-photo-1579741.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" alt="Himalayan landscape" class="hero-image" />
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Welcome to<br />
+        <span class="highlight">Yak Yeti</span>
+      </h1>
+      <p class="hero-subtitle">
+        Authentic Nepalese & Himalayan cuisine in the heart of Lisbon.<br />
+        Experience the flavors of the mountains.
+      </p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-primary">View Menu</a>
+        <a href="#contact" class="btn btn-outline">Book Table</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(217, 119, 6, 0.7) 0%,
+      rgba(146, 64, 14, 0.8) 100%
+    );
+    z-index: -1;
+  }
+
+  .hero-content {
+    text-align: center;
+    color: var(--white);
+    max-width: 800px;
+    padding: 2rem;
+    animation: fadeInUp 1s ease-out;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .highlight {
+    color: var(--accent-gold);
+    display: block;
+    font-size: 1.2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent-gold), var(--primary-orange));
+    font-size: 1.1rem;
+    padding: 1rem 2.5rem;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--white);
+    animation: bounce 2s infinite;
+  }
+
+  .scroll-arrow {
+    width: 2px;
+    height: 30px;
+    background: var(--white);
+    position: relative;
+    opacity: 0.7;
+  }
+
+  .scroll-arrow::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 8px solid var(--white);
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    40% {
+      transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+      transform: translateX(-50%) translateY(-5px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 500px;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-buttons .btn {
+      width: 200px;
+    }
+  }
+</style>
