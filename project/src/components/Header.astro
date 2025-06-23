@@ -6,8 +6,8 @@
     <div class="container">
       <div class="nav-content">
         <div class="logo">
-          <h1>Yak Yeti</h1>
-          <span class="tagline">Himalayan Cuisine</span>
+          <img src="https://ugc.production.linktr.ee/1d846993-9550-4d4a-9d30-51b84c0a75ce_Posts-Yak-and-Yeti.png?io=true&amp;size=avatar-v3_0" alt="Yak Yhttps://ugc.production.linktr.ee/1d846993-9550-4d4a-9d30-51b84c0a75ce_Posts-Yak-and-Yeti.png?io=true&amp;size=avatar-v3_0" class="yakyeti_logo"/>
+          <span class="tagline">Yak & Yeti</span>
         </div>
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
@@ -46,17 +46,26 @@
     padding: 1rem 0;
   }
 
+  .logo{
+    display: flex;
+    align-items: center;
+  }
+
   .logo h1 {
     font-size: 1.75rem;
     color: var(--primary-orange);
-    margin: 0;
+    margin-left: 1rem;
     font-weight: 700;
   }
-
+  .yakyeti_logo{
+    width: 4rem;
+    height: 4rem;
+  }
   .tagline {
-    font-size: 0.75rem;
+    margin-left: 1rem;
+    font-size: 1rem;
     color: var(--text-light);
-    font-weight: 300;
+    font-weight: 500;
     letter-spacing: 1px;
     text-transform: uppercase;
   }
@@ -99,6 +108,14 @@
     padding: 0.5rem 1.5rem;
     font-size: 0.9rem;
   }
+
+  .btn.btn-sm {
+    background: linear-gradient(135deg, #F14522 50%, #ffd7d7);
+    color: #ffffff;
+    border: 2px solid #f14522;
+  }
+
+
 
   .menu-toggle {
     display: none;

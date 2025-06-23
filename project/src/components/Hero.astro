@@ -1,20 +1,19 @@
 ---
 ---
-
 <section id="home" class="hero">
   <div class="hero-background">
-    <img src="https://images.pexels.com/photos/1579741/pexels-photo-1579741.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" alt="Himalayan landscape" class="hero-image" />
+    <img src="https://images.unsplash.com/photo-1592285896110-8d88b5b3a5d8?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" alt="Himalayan landscape" class="hero-image" />
     <div class="hero-overlay"></div>
   </div>
   <div class="container">
     <div class="hero-content">
       <h1 class="hero-title">
-        Welcome to<br />
-        <span class="highlight">Yak Yeti</span>
+        <span class="highlight">Yak & Yeti</span>
       </h1>
       <p class="hero-subtitle">
         Authentic Nepalese & Himalayan cuisine in the heart of Lisbon.<br />
         Experience the flavors of the mountains.
+        
       </p>
       <div class="hero-buttons">
         <a href="#menu" class="btn btn-primary">View Menu</a>
@@ -45,6 +44,7 @@
     width: 100%;
     height: 100%;
     z-index: -2;
+    filter: blur(5px);
   }
 
   .hero-image {
@@ -69,6 +69,7 @@
   }
 
   .hero-content {
+    margin-top: 6rem;
     text-align: center;
     color: var(--white);
     max-width: 800px;
@@ -84,18 +85,21 @@
   }
 
   .highlight {
-    color: var(--accent-gold);
+    color: #F14522;
     display: block;
     font-size: 1.2em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: -1px 0 #1E2837, 0 1px #1E2837, 1px 0 #1E2837, 0 2px #1E2837;
   }
 
   .hero-subtitle {
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     margin-bottom: 2.5rem;
     opacity: 0.95;
-    font-weight: 300;
+    font-weight: 700;
     line-height: 1.6;
+    color: black;
+
   }
 
   .hero-buttons {
@@ -106,9 +110,24 @@
   }
 
   .btn-primary {
-    background: linear-gradient(135deg, var(--accent-gold), var(--primary-orange));
+    background: linear-gradient(135deg, #F14522 20%, #F24624 40%, #F04F2E 60%, #F25A3B 80%, #F27F68);
     font-size: 1.1rem;
     padding: 1rem 2.5rem;
+    border: 2px solid #f14522;
+    border-color: #f14522;
+  }
+
+  .btn-outline {
+    color: #f14522;
+    border-color: #f14522;
+    padding: 1rem 2.5rem;
+
+    font-size: 1.1rem;
+  }
+
+  .btn-outline:hover {
+    background: linear-gradient(135deg, #F14522 20%, #F24624 40%, #F04F2E 60%, #F25A3B 80%, #F27F68);
+    color: #fff;
   }
 
   .scroll-indicator {
